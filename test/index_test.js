@@ -6,10 +6,9 @@ describe('createRequest', () => {
 
   context('successful calls', () => {
     const requests = [
-      { name: 'id not supplied', testData: { data: { base: 'ETH', quote: 'USD' } } },
-      { name: 'base/quote', testData: { id: jobID, data: { base: 'ETH', quote: 'USD' } } },
-      { name: 'from/to', testData: { id: jobID, data: { from: 'ETH', to: 'USD' } } },
-      { name: 'coin/market', testData: { id: jobID, data: { coin: 'ETH', market: 'USD' } } }
+      { name: 'id not supplied', testData: { data: { set: '' } } },
+      { name: 'using set param', testData: { id: jobID, data: { set: 'ethbtcrsi7030' } } },
+      { name: 'using id param', testData: { id: jobID, data: { id: 'ethbtc26emaco' } } }
     ]
 
     requests.forEach(req => {
@@ -30,10 +29,8 @@ describe('createRequest', () => {
     const requests = [
       { name: 'empty body', testData: {} },
       { name: 'empty data', testData: { data: {} } },
-      { name: 'base not supplied', testData: { id: jobID, data: { quote: 'USD' } } },
-      { name: 'quote not supplied', testData: { id: jobID, data: { base: 'ETH' } } },
-      { name: 'unknown base', testData: { id: jobID, data: { base: 'not_real', quote: 'USD' } } },
-      { name: 'unknown quote', testData: { id: jobID, data: { base: 'ETH', quote: 'not_real' } } }
+      { name: 'set not supplied', testData: { id: jobID, data: {} } },
+      { name: 'unknown set', testData: { id: jobID, data: { set: 'fake_set' } } }
     ]
 
     requests.forEach(req => {
