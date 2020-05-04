@@ -30,12 +30,11 @@ const createRequest = (input, callback) => {
     .then(response => {
       // This API call returns all the sets, we need to find the requested set.
       // We default to 'ethrsiapy' when no set is defined.
-      const theSet = response.body['rebalancing_sets'].find(el => el['id'] === set) || {}
-      const setPrice = Requester.validateResult(theSet, ['price_usd'])
+      response.body = response.body.rebalancing_sets.find(el => el['id'] === set) || {}
       // It's common practice to store the desired value at the top-level
       // result key. This allows different adapters to be compatible with
       // one another.
-      response.body.result = setPrice
+      response.body.result = Requester.validateResult(response.body, ['price_usd'])
       callback(response.statusCode, Requester.success(jobRunID, response))
     })
     .catch(error => {

@@ -19,6 +19,7 @@ describe('createRequest', () => {
           assert.isNotEmpty(data.data)
           assert.isAbove(Number(data.result), 0)
           assert.isAbove(Number(data.data.result), 0)
+          console.log(data)
           done()
         })
       })
