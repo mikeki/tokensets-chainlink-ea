@@ -32,7 +32,7 @@ Currently deployed in GCP https://us-central1-chainlink-276019.cloudfunctions.ne
 		{
 			"type": "runlog",
 			"params": {
-				"address": "0x0f0b978d4fda37b9169a7e55ecba4a9517f64aa8"
+				"address": <YOUR_ORACLE_CONTRACT_ADDRESS>
 			}
 		}
 	],
