@@ -14,16 +14,16 @@ req.add("tokensetId", "ethrsiapy");
 
 ## Output
 
-```json
+```
 {
- "jobRunID": "278c97ffadb54a5bbb93cfec5f7b5503",
- "data": {
-  "id": "<id_of_set>",
-  //... <tokenset data which can be parsed with parseJson task>
-  "price_usd": "164.02",
-  "result": "164.02"
- },
- "statusCode": 200
+  "jobRunID": "278c97ffadb54a5bbb93cfec5f7b5503",
+  "data": {
+    "id": "<id_of_set>",
+    //... <tokenset data which can be parsed with parseJson task>
+    "price_usd": "164.02",
+    "result": "164.02"
+   },
+   "statusCode": 200
 }
 ```
 
@@ -32,42 +32,42 @@ req.add("tokensetId", "ethrsiapy");
 For serving a specific set, set the `tokensetId` parameter in the JobSpec.
 If you want to allow the callers to specify their own set, leave the params empty.
 
-```json
+```
 {
-	"initiators": [
-		{
-			"type": "runlog",
-			"params": {
-				"address": //<YOUR_ORACLE_CONTRACT_ADDRESS>
-			}
-		}
-	],
-	"tasks": [
-		{
-			"type": "tokensets",
-			"confirmations": null,
-			"params": {
-				"tokenset_id": //<TOKENSET_ID>
-			}
-		},
-		{
-			"type": "multiply",
-			"confirmations": null,
-			"params": {}
-		},
-		{
-			"type": "ethuint256",
-			"confirmations": null,
-			"params": {}
-		},
-		{
-			"type": "ethtx",
-			"confirmations": null,
-			"params": {}
-		}
-	],
-	"startAt": null,
-	"endAt": null
+  "initiators": [
+    {
+      "type": "runlog",
+      "params": {
+        "address": //<YOUR_ORACLE_CONTRACT_ADDRESS>
+      }
+    }
+  ],
+  "tasks": [
+    {
+      "type": "tokensets",
+      "confirmations": null,
+      "params": {
+        "tokenset_id": //<TOKENSET_ID>
+      }
+    },
+    {
+      "type": "multiply",
+      "confirmations": null,
+      "params": {}
+    },
+    {
+      "type": "ethuint256",
+      "confirmations": null,
+      "params": {}
+    },
+    {
+      "type": "ethtx",
+      "confirmations": null,
+      "params": {}
+    }
+  ],
+  "startAt": null,
+  "endAt": null
 }
 ```
 
