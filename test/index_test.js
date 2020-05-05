@@ -7,7 +7,8 @@ describe('createRequest', () => {
   context('successful calls', () => {
     const requests = [
       { name: 'id not supplied', testData: { data: { tokenset_id: '' } } },
-      { name: 'using set param', testData: { id: jobID, data: { tokenset_id: 'ethbtcrsi7030' } } }
+      { name: 'using tokenset_id param', testData: { id: jobID, data: { tokenset_id: 'ethbtcrsi7030' } } },
+      { name: 'using tokensetId param', testData: { id: jobID, data: { tokensetId: 'ethbtcrsi7030' } } }
     ]
 
     requests.forEach(req => {

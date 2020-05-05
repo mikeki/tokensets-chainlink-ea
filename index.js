@@ -12,7 +12,7 @@ const customError = (body) => {
 // with a Boolean value indicating whether or not they
 // should be required.
 const customParams = {
-  tokensetId: ['tokenset_id'],
+  tokensetId: ['tokenset_id', 'tokensetId'],
   // safeValue: false
 }
 
