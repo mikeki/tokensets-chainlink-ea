@@ -6,7 +6,7 @@ describe('createRequest', () => {
 
   context('successful calls', () => {
     const requests = [
-      { name: 'id not supplied', testData: { data: { tokenset_id: '' } } },
+      { name: 'jobId not supplied', testData: { data: { tokenset_id: '' } } },
       { name: 'using tokenset_id param', testData: { id: jobID, data: { tokenset_id: 'ethbtcrsi7030' } } },
       { name: 'using tokensetId param', testData: { id: jobID, data: { tokensetId: 'ethbtcrsi7030' } } }
     ]
@@ -29,7 +29,7 @@ describe('createRequest', () => {
     const requests = [
       { name: 'empty body', testData: {} },
       { name: 'empty data', testData: { data: {} } },
-      { name: 'set not supplied', testData: { id: jobID, data: {} } },
+      { name: 'tokensetId not supplied', testData: { id: jobID, data: {} } },
       { name: 'wrong parameter', testData: { id: jobID, data: { set: 'ethbtcrsi7030' } } },
       { name: 'unknown set', testData: { id: jobID, data: { tokenset_id: 'fake_id' } } }
     ]
