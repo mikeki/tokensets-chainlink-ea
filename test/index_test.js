@@ -6,9 +6,8 @@ describe('createRequest', () => {
 
   context('successful calls', () => {
     const requests = [
-      { name: 'id not supplied', testData: { data: { set: '' } } },
-      { name: 'using set param', testData: { id: jobID, data: { set: 'ethbtcrsi7030' } } },
-      { name: 'using id param', testData: { id: jobID, data: { id: 'ethbtc26emaco' } } }
+      { name: 'id not supplied', testData: { data: { tokenset_id: '' } } },
+      { name: 'using set param', testData: { id: jobID, data: { tokenset_id: 'ethbtcrsi7030' } } }
     ]
 
     requests.forEach(req => {
@@ -19,7 +18,6 @@ describe('createRequest', () => {
           assert.isNotEmpty(data.data)
           assert.isAbove(Number(data.result), 0)
           assert.isAbove(Number(data.data.result), 0)
-          console.log(data)
           done()
         })
       })
@@ -31,7 +29,8 @@ describe('createRequest', () => {
       { name: 'empty body', testData: {} },
       { name: 'empty data', testData: { data: {} } },
       { name: 'set not supplied', testData: { id: jobID, data: {} } },
-      { name: 'unknown set', testData: { id: jobID, data: { set: 'fake_set' } } }
+      { name: 'wrong parameter', testData: { id: jobID, data: { set: 'ethbtcrsi7030' } } },
+      { name: 'unknown set', testData: { id: jobID, data: { tokenset_id: 'fake_id' } } }
     ]
 
     requests.forEach(req => {

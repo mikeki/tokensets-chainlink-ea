@@ -4,7 +4,7 @@ External adapter forked from https://github.com/thodges-gh/CL-EA-NodeJS-Template
 
 ## Input Params
 
-- `set` or `id`: The id from the set we want to query
+- `tokenset_id`: The id from the set we want to query
 
 ## Output
 
@@ -41,7 +41,7 @@ Currently deployed in GCP https://us-central1-chainlink-276019.cloudfunctions.ne
 			"type": "tokensets",
 			"confirmations": null,
 			"params": {
-				"set": "ethrsi6040"
+				"tokenset_id": "ethrsi6040"
 			}
 		},
 		{

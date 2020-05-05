@@ -12,7 +12,7 @@ const customError = (body) => {
 // with a Boolean value indicating whether or not they
 // should be required.
 const customParams = {
-  set: ['set', 'id'],
+  tokensetId: ['tokenset_id'],
   // safeValue: false
 }
 
@@ -21,7 +21,7 @@ const createRequest = (input, callback) => {
   const validator = new Validator(input, customParams, callback)
   const jobRunID = validator.validated.id
   const url = `https://api.tokensets.com/public/v1/rebalancing_sets`
-  const set = validator.validated.data.set.toLowerCase() || 'ethrsiapy'
+  const tokensetId = validator.validated.data.tokensetId.toLowerCase() || 'ethrsiapy'
   // const getSafeValue = validator.validated.data.safeValue === 'true'
 
   // The Requester allows API calls be retry in case of timeout
@@ -30,7 +30,7 @@ const createRequest = (input, callback) => {
     .then(response => {
       // This API call returns all the sets, we need to find the requested set.
       // We default to 'ethrsiapy' when no set is defined.
-      response.body = response.body.rebalancing_sets.find(el => el['id'] === set) || {}
+      response.body = response.body.rebalancing_sets.find(el => el['id'] === tokensetId) || {}
       // It's common practice to store the desired value at the top-level
       // result key. This allows different adapters to be compatible with
       // one another.
