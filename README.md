@@ -19,7 +19,7 @@ req.add("tokensetId", "ethrsiapy");
  "jobRunID": "278c97ffadb54a5bbb93cfec5f7b5503",
  "data": {
   "id": "<id_of_set>",
-  ... <tokenset data which can be parsed with parseJson task>
+  //... <tokenset data which can be parsed with parseJson task>
   "price_usd": "164.02",
   "result": "164.02"
  },
@@ -32,13 +32,13 @@ req.add("tokensetId", "ethrsiapy");
 For serving a specific set, set the `tokensetId` parameter in the JobSpec.
 If you want to allow the callers to specify their own set, leave the params empty.
 
-```
+```json
 {
 	"initiators": [
 		{
 			"type": "runlog",
 			"params": {
-				"address": <YOUR_ORACLE_CONTRACT_ADDRESS>
+				"address": //<YOUR_ORACLE_CONTRACT_ADDRESS>
 			}
 		}
 	],
@@ -47,7 +47,7 @@ If you want to allow the callers to specify their own set, leave the params empt
 			"type": "tokensets",
 			"confirmations": null,
 			"params": {
-				"tokenset_id": <TOKENSET_ID>
+				"tokenset_id": //<TOKENSET_ID>
 			}
 		},
 		{
