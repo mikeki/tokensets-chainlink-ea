@@ -22,9 +22,6 @@ External adapter forked from https://github.com/thodges-gh/CL-EA-NodeJS-Template
 }
 ```
 
-## Current deployment
-Currently deployed in GCP https://us-central1-chainlink-276019.cloudfunctions.net/tokensets-adapter 
-
 ## Job Spec
 ```
 {
