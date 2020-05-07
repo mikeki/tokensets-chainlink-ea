@@ -38,7 +38,7 @@ If you want to allow the callers to specify their own set, leave the params empt
     {
       "type": "runlog",
       "params": {
-        "address": //<YOUR_ORACLE_CONTRACT_ADDRESS>
+        "address": <YOUR_ORACLE_CONTRACT_ADDRESS>
       }
     }
   ],
@@ -47,7 +47,9 @@ If you want to allow the callers to specify their own set, leave the params empt
       "type": "tokensets",
       "confirmations": null,
       "params": {
-        "tokenset_id": //<TOKENSET_ID>
+        // OPTIONAL: If you set this param in the JobSpec, this Job will always return the price for this token
+        // If the params are empty, then it's up to the consumer to specificy which token they want.
+        // "tokenset_id": <TOKENSET_ID>
       }
     },
     {
